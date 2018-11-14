@@ -5632,6 +5632,8 @@ kshf.Browser.prototype = {
           }
           if(this.source.gdocId){
             this.loadTable_Google(tableDescr);
+          } else if (this.source.data) {
+            this.loadTable_JSON(v);
           } else {
             switch(this.source.fileType || tableDescr.fileType){
               case "json": this.loadTable_JSON(tableDescr); break;
