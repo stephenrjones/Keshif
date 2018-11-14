@@ -5875,6 +5875,7 @@ kshf.Browser.prototype = {
         reader.readAsText(tableDescr);
       } else if (tableDescr.data && tableDescr.data instanceof Array) { 
         processJSONText( tableDescr.data );
+        if (me.source.callback) me.asyncDataLoaded();
       } else {
         if(me.source.callback) me.asyncDataWaitedCnt++;
         d3.request(this.source.dirPath+tableDescr.name+".json?dl=0")
